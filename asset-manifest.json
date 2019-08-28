@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/FidusUserpage/static/css/main.6f786156.chunk.css",
+    "main.js": "/FidusUserpage/static/js/main.451f99c4.chunk.js",
+    "main.js.map": "/FidusUserpage/static/js/main.451f99c4.chunk.js.map",
+    "runtime~main.js": "/FidusUserpage/static/js/runtime~main.0474e0bd.js",
+    "runtime~main.js.map": "/FidusUserpage/static/js/runtime~main.0474e0bd.js.map",
+    "static/js/2.2f6d7583.chunk.js": "/FidusUserpage/static/js/2.2f6d7583.chunk.js",
+    "static/js/2.2f6d7583.chunk.js.map": "/FidusUserpage/static/js/2.2f6d7583.chunk.js.map",
+    "index.html": "/FidusUserpage/index.html",
+    "precache-manifest.82991cef011015a8e6b85ecb38adfbe9.js": "/FidusUserpage/precache-manifest.82991cef011015a8e6b85ecb38adfbe9.js",
+    "service-worker.js": "/FidusUserpage/service-worker.js",
+    "static/css/main.6f786156.chunk.css.map": "/FidusUserpage/static/css/main.6f786156.chunk.css.map",
+    "static/media/index.scss": "/FidusUserpage/static/media/googleplay@2x.b9ec591b.jpg",
+    "static/media/bg1@2x.jpg": "/FidusUserpage/static/media/bg1@2x.752fc4bb.jpg",
+    "static/media/fidusapp.png": "/FidusUserpage/static/media/fidusapp.7c5f9999.png",
+    "static/media/horizontal@2x.png": "/FidusUserpage/static/media/horizontal@2x.1d6751af.png",
+    "static/media/imagenbanner.png": "/FidusUserpage/static/media/imagenbanner.17cc9cd9.png",
+    "static/media/logonews.png": "/FidusUserpage/static/media/logonews.12f9dd1f.png",
+    "static/media/newsimage.jpg": "/FidusUserpage/static/media/newsimage.37962e3f.jpg",
+    "static/media/noimage.png": "/FidusUserpage/static/media/noimage.5ab18564.png",
+    "static/media/vertical@2x.png": "/FidusUserpage/static/media/vertical@2x.1d01527b.png"
+  }
+}
