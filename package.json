@@ -2,7 +2,7 @@
   "name": "fidus-userpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mbelenmontoya.github.io/FidusUserpage",
+  "homepage": "./",
   "dependencies": {
     "axios": "^0.19.0",
     "gh-pages": "^2.1.1",
