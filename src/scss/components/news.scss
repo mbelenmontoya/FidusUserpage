@@ -1,0 +1,81 @@
+.news{
+  background-color: $f-primary-gray;
+  .news-boxcontainer{
+    @include display-flex;
+    @include property('flex-direction', row);
+    @include justify-content(space-between);
+    padding: 0 150px;
+  }
+  .news-generalcontainer{
+    background-color: $f-primary-red;
+    color: $f-white;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    cursor: pointer;
+    height: 270px;
+    @include display-flex;
+    flex: 2;
+    box-sizing: border-box;
+    margin-right: 20px;
+  }
+  .news-contentbox{
+    position: relative;
+    @include display-flex;
+    @include property('flex-direction', column);
+    @include property('align-items', center);
+    @include justify-content(space-between);
+    flex: 1;
+     padding: 40px 0;
+     box-sizing: border-box;
+  }
+
+  .news-container{
+    position: relative;
+    @include display-flex;
+    @include property('flex-direction', column);
+    @include property('align-items', center);
+    @include justify-content(center);
+    background-color: $f-primary-red;
+    color: $f-white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 270px;
+    flex: 1;
+    padding: 40px 0;
+  }
+  .box-title{
+    font-size: 28px;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 10px;
+  }
+  .news-logocontainer{
+    background-color: $f-white;
+    overflow: hidden; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;  
+    @include display-flex;  
+    @include property('align-items', center);
+    @include justify-content(center);
+  }
+  .news-logo{
+    max-width: 80px;
+  }
+  .news-imagecontainer{
+    overflow: hidden;
+    flex: 1;
+  }
+  .action-button{
+    padding: 5px 30px;
+    color: $f-white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid $f-white;
+  }
+}

@@ -1,0 +1,53 @@
+.benefit{
+  background-color: $f-primary-gray;
+  .benefit-containerboxes{
+    @include display-flex;
+    @include property('flex-wrap', wrap);
+    @include property('justify-content', flex-start);
+    padding: 0 80px;
+  }
+  .benefit-box{
+    max-width: 300px;
+    background: $f-white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  .benefit-imagecontainer{
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .benefit-contentbox{
+    padding: 20px;
+    @include display-flex;
+    @include property('flex-direction', column);
+    @include property('justify-content', space-evenly);
+    @include property('align-items', center);
+    height: 50%;
+    text-align: center;
+    @include box-sizing;
+  }
+  .benefit-logo{
+    opacity: 1;
+    transition: all 0.1s ease-out;
+    max-width: 120px;
+  }
+  .benefit-image{
+    max-width: 130%;
+  }
+  .benefit-name{
+    opacity: 1;
+    transition: all 0.1s ease-out;
+    color: $f-primary-blue;
+    font-size: 14px;
+  }
+  .benefit-benefit{
+    transition: all 0.1s ease-out;
+    font-size: 18px;
+    color: $f-black;
+  }
+}

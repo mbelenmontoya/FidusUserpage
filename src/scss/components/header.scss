@@ -1,0 +1,70 @@
+.header{
+  .header-top{
+    background-color: $f-primary-blue;
+    @include display-flex;
+    @include property('justify-content', space-between);
+    padding: 25px 50px;
+    @include linear-gradient;
+    align-items: center;
+  }
+  .header-nav-container{
+    background-color: $f-primary-gray;
+    border-bottom: 1px solid $f-secondary-gray;
+    @include display-flex;
+    @include property('justify-content', space-between);
+    padding: 0 50px;
+  }
+  .header-logo-container{
+    max-width: 160px;
+  }
+  .header-search-container{
+    position: relative;
+  }
+  .header-search-icon{
+    background-image: url('../../images/assets/search-icon.png');
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+  .header-search{
+    background-color: rgba($f-white, 0.5);
+    border: none;
+    padding: 10px 0 10px 40px;
+    color: $f-white;
+    border-radius: 20px;
+    min-width: 200px;
+    &::placeholder{
+      color: $f-white;
+      font-size: 14px;
+
+    }
+    &:focus{
+      border-radius: 20px;
+    }
+  }
+  .header-nav{
+    @include display-flex;
+    @include reset-list;
+    @include property('justify-content', space-between);
+  }
+  .header-link-item{
+    text-decoration: none;
+    font-weight: bold;
+    color: $f-black;
+    display: block;
+    padding: 20px 50px 20px 0;
+    font-size: 16px;
+  }
+  .header-button{
+     color: $f-secondary-blue;
+     padding: 20px 0 20px 30px;
+     font-weight: bold;
+     text-decoration: none;
+     display: block;
+     font-size: 16px;
+  }
+}

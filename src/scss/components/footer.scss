@@ -1,0 +1,44 @@
+.footer{
+  background-color: $f-terciary-blue;
+  @include display-flex;
+  position: relative;
+  padding: 70px 50px;
+  margin-top: 100px;
+  @include property('justify-content', space-between);
+  box-sizing: border-box;
+    padding-bottom: 120px;
+  .footer-textcontainer{
+    @include display-flex;
+    flex: 3;
+  }
+  .footer-logocontainer{
+    max-width: 150px;
+    margin-right: 100px;
+  }
+  .footer-fidusapp{
+    flex: 1;
+    position: relative;
+  }
+  .footer-fiduscontainer{
+    position: absolute;
+    top: -146px;
+  }
+  .footer-listlinks{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer-link{
+    color: $f-white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .fidus-copyright{
+    position: absolute;
+    bottom: -100px;
+    color: $f-white;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}

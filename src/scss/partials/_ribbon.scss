@@ -1,0 +1,19 @@
+.ribbon{
+  background-color: $f-white; 
+  color: $f-primary-red;
+  position: absolute;
+  right: 0;
+  padding: 4px 8px 4px 25px;
+  font-weight: bold;
+  &::after{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 15px solid transparent;
+    border-left: 20px solid $f-primary-red;
+    border-bottom: 15px solid transparent;
+  }
+}

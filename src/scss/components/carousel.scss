@@ -1,0 +1,60 @@
+.carousel{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  height: 70vh;
+  text-align: right;
+  >.carousel-slide{
+    position: absolute;
+    width: 100vw;
+    height: 70vh;
+    transition: all 1s ease-in-out;
+    text-align: right;
+     &.hidden{
+       opacity: 0;
+    }
+    &.visible{
+      opacity: 1;
+    }
+  }
+  .carousel-list{
+    @include display-flex;
+    @include reset-list;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+  }
+  .carousel-google-button{
+    background-image: url('../../images/assets/googleplay@2x.jpg');
+  }
+  .carousel-apple-button{
+    background-image: url('../../images/assets/appstore@2x.jpg');
+  }
+  .carousel-google-button,
+  .carousel-apple-button{
+    padding: 10px 30px;
+    background-size: cover;
+    margin-right: 50px;
+  }
+  .carousel-bullet{
+    padding: 5px;
+  }
+  .carousel-bullet-item{
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid $f-black;
+    border-radius: 50%;
+    &.active{
+      border: none;
+      background-color: $f-black;
+    }
+  }
+  .carousel-title{
+    padding-right: 50px;
+    margin-top: 100px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}

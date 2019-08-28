@@ -1,0 +1,31 @@
+.banner-business{
+  background-color: $f-primary-blue;
+  @include display-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  .banner-imagecontainer,
+  .banner-contentcontainer{
+    flex: 1;
+  }
+  .banner-imagecontainer,{
+    padding-left: 100px;
+  }
+  .banner-contentcontainer{
+    padding-right: 100px;
+  }
+  .banner-title{
+    color: $f-white;
+    font-size: 40px;
+    line-height: 45px;
+    margin-bottom: 30px;
+  }
+  .banner-button{
+    padding: 10px 70px;
+    background-image: linear-gradient(to right, $f-secondary-blue, $f-primary-blue);
+    border: solid 2px $f-white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: $f-white;
+  }
+}
