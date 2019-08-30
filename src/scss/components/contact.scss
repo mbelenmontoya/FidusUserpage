@@ -1,0 +1,72 @@
+.contact{
+  background-color: $f-primary-gray;
+  text-align: center;
+  padding-bottom: 30px;
+  .contact-content{
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .contact-title{
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  .contact-list{
+    @include display-flex;
+    @include justify-content(center);
+    list-style:none;
+  }
+  .contact-item{
+    flex: 1;
+    text-align: center;
+    border-bottom: 5px solid $f-secondary-gray;
+    padding-bottom: 5px;
+    cursor: pointer;
+    &.-active{
+      border-bottom-color: $f-primary-blue;
+    }
+  }
+  .contact-link{
+    text-decoration: none;
+    color: $f-black;
+  }
+  .contact-form{
+    margin-top: 50px;
+    @include display-flex;
+    @include property('flex-direction', column);
+  }
+  .contact-business{
+    margin-top: 50px;
+  }
+  .contact-paragraph{
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .contact-input,
+  .contact-textarea{
+    background-color: $f-white;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 0 10px 30px;
+    margin-bottom: 20px;
+    &::placeholder{
+      color: $f-terciary-gray;
+      font-size: 14px;
+    }
+  }
+
+  .contact-textarea{
+    min-height: 150px;
+    margin-bottom: 30px;
+  }
+
+  .contact-button{
+    background-image: linear-gradient(to right, $f-secondary-blue, $f-primary-blue);
+    padding: 10px 60px;
+    border: none;
+    color: $f-white;
+    border-radius: 8px;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+}

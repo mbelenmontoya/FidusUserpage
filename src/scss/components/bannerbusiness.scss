@@ -1,9 +1,12 @@
 .banner-business{
   background-color: $f-primary-blue;
   @include display-flex;
-  justify-content: center;
+  position: relative;
   align-items: center;
   text-align: right;
+  padding-top: 30px;
+  @include box-sizing;
+  @include linear-gradient;
   .banner-imagecontainer,
   .banner-contentcontainer{
     flex: 1;

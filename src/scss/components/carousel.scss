@@ -7,9 +7,10 @@
   >.carousel-slide{
     position: absolute;
     width: 100vw;
-    height: 70vh;
+    height: 100%;
     transition: all 1s ease-in-out;
     text-align: right;
+    background-size: cover;
      &.hidden{
        opacity: 0;
     }
@@ -23,6 +24,7 @@
     position: absolute;
     bottom: 30px;
     right: 50px;
+    z-index: 1;
   }
   .carousel-google-button{
     background-image: url('../../images/assets/googleplay@2x.jpg');
@@ -32,9 +34,14 @@
   }
   .carousel-google-button,
   .carousel-apple-button{
-    padding: 10px 30px;
+    padding: 20px 65px;
     background-size: cover;
-    margin-right: 50px;
+    margin-right: 30px;
+    margin-top: 30px;
+    @include box-sizing;
+    background-position: center;
+    border: none;
+    cursor: pointer;
   }
   .carousel-bullet{
     padding: 5px;
@@ -43,11 +50,11 @@
     width: 10px;
     height: 10px;
     display: block;
-    border: 1px solid $f-black;
+    border: 1px solid $f-white;
     border-radius: 50%;
     &.active{
       border: none;
-      background-color: $f-black;
+      background-color: $f-white;
     }
   }
   .carousel-title{

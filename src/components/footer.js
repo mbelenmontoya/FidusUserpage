@@ -1,7 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 import fidusapp from '../images/assets/fidusapp.png'
 import logovertical from '../images/logos/vertical@2x.png'
+import fbimage from '../images/assets/fb@2x.png'
+import igimage from '../images/assets/ig@2x.png'
+import lkimage from '../images/assets/lk@2x.png'
 
 const Footer = () => {
   return(
@@ -11,12 +15,20 @@ const Footer = () => {
           <img src={logovertical} alt="" className="footer-logo" />
         </figure>
         <ul className="footer-listlinks">
-          <li className="footer-item"><a href="#" className="footer-link">Preguntas Frecuentes</a></li>
-          <li className="footer-item"><a href="#" className="footer-link">Contacto</a></li>
           <li className="footer-item">
-            <a href="#" className="footer-link">Facebook</a> 
-            <a href="#" className="footer-link">Instagram</a> 
-            <a href="#" className="footer-link">Twitter</a>
+            <Router>
+              <Link to='/faqs' className="footer-link">Preguntas Frecuentes</Link>
+            </Router>
+          </li>
+          <li className="footer-item">
+            <Router>
+              <Link to='/contact' className="footer-link">Contacto</Link>
+            </Router>
+          </li>
+          <li className="footer-item -max-width">
+            <a href="#" className="footer-link"><img src={fbimage} alt="facebook logo"    className="footer-image" /></a> 
+            <a href="#" className="footer-link"><img src={igimage} alt="facebook logo" className="footer-image" /></a> 
+            <a href="#" className="footer-link"><img src={lkimage} alt="facebook logo" className="footer-image" /></a>
           </li>
         </ul>
       </div>

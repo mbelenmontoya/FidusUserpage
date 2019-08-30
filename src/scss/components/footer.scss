@@ -5,6 +5,7 @@
   padding: 70px 50px;
   margin-top: 100px;
   @include property('justify-content', space-between);
+  @include linear-gradient;
   box-sizing: border-box;
     padding-bottom: 120px;
   .footer-textcontainer{
@@ -29,6 +30,13 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  .footer-item{
+    @include display-flex;
+    @include justify-content(space-between);
+    &.-max-width{
+      @include max-width(75%);
+    }
+  }
   .footer-link{
     color: $f-white;
     text-decoration: none;
@@ -40,5 +48,8 @@
     color: $f-white;
     font-size: 12px;
     white-space: nowrap;
+  }
+  .footer-image{
+    max-width: 30px;
   }
 }

@@ -6,9 +6,16 @@ import noimage from '../images/assets/noimage.png'
 
 const BenefitTitle = props => {
   const {title} = props;
-  return(
-    <h2 className="section-title">{title}</h2>
-  );
+  switch(title) {
+    case 'fidusclub':
+      return <h2 className="section-title">Fidus Club</h2>;
+    case 'fidusempresas':
+      return <h2 className="section-title">Fidus Empresas</h2>;
+    case 'fidusuniversitarios':
+      return <h2 className="section-title">Fidus Universidades</h2>;
+    default:
+      return <h2 className="section-title">Fidus</h2>;
+  }
 }
 
 const Benefit = props => {
@@ -16,7 +23,7 @@ const Benefit = props => {
   return (
       <div className="benefit-box">
         <figure className="benefit-imagecontainer">
-          <img src={image != '' && image != null ? image : noimage} alt="" className="benefit-image" />
+          <img src={image !== '' && image !== null ? image : noimage} alt="" className="benefit-image" />
         </figure>
         <div className="benefit-contentbox">
           <img src={logo} alt="logo del beneficio" className="benefit-logo" />
@@ -30,13 +37,13 @@ const Benefit = props => {
 }
 
 
-class BenefitClub extends Component{
+class BenefitCall extends Component{
  state = {
    list: []
  }
 
  componentDidMount(){
-   axios.get('http://stage.fidus.com.ar/api/v1/landing/featured_mobile_rewards')
+   axios.get(`http://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.rewards;
      this.setState({ list });
@@ -55,68 +62,15 @@ class BenefitClub extends Component{
 
 }
 
-class BenefitEmpresas extends Component{
- state = {
-   list: []
- }
-
- componentDidMount(){
-   axios.get('http://stage.fidus.com.ar/api/v1/landing/featured_mobile_rewards_companies')
-   .then(res => {
-     const list = res.data.rewards;
-     this.setState({ list });
-   })
- }
-
- render(){
-   return(
-      <div className="benefit-containerboxes">
-      {this.state.list.map(reward => 
-        <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} />     
-      )}
-      </div>
-   );
- }
-
-}
-
-class BenefitUniversidades extends Component{
- state = {
-   list: []
- }
-
- componentDidMount(){
-   axios.get('http://stage.fidus.com.ar/api/v1/landing/featured_mobile_rewards_universities')
-   .then(res => {
-     const list = res.data.rewards;
-     this.setState({ list });
-   })
- }
-
- render(){
-   return(
-      <div className="benefit-containerboxes">
-      {this.state.list.map(reward => 
-        <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} />     
-      )}
-      </div>
-   );
- }
-
-}
-
-const BenefitAll = () => {
+const BenefitBox = props => {
+  const {name, url, match} = props;
   return(
     <div className="benefit">
-       <BenefitTitle title="Fidus Club" />
-       <BenefitClub />
-       <BenefitTitle title="Fidus Empresas" />
-       <BenefitEmpresas />
-       <BenefitTitle title="Fidus Universidades" />
-       <BenefitUniversidades />
+       <BenefitTitle title={match !== undefined ? match.params.id : name} />
+       <BenefitCall url={url} />
     </div>
   );
 }
 
 
-export default BenefitAll
+export default BenefitBox

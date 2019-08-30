@@ -2,8 +2,8 @@ import React from 'react'
 
 //images
 import bg1 from '../images/assets/bg1@2x.jpg'
-import bg2 from '../images/assets/bg1@2x.jpg'
-import bg3 from '../images/assets/bg1@2x.jpg'
+import bg2 from '../images/assets/bg2@2x.jpg'
+import bg3 from '../images/assets/bg3@2x.jpg'
 
 const listImages = [
   {image : `${bg1}` , 
@@ -26,8 +26,8 @@ const Carousel = () => {
       <div className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'} 
       style={{backgroundImage:`url(${image})`}} key={i}>
         <h1 className="carousel-title">{frase}</h1>
-        <button type="button" className="carousel-google-button">google</button>
-        <button type="button" className="carousel-apple-button">apple</button>
+        <button type="button" className="carousel-google-button"></button>
+        <button type="button" className="carousel-apple-button"></button>
       </div>
     ))}
     </div>

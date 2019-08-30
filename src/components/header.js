@@ -1,19 +1,23 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+
 
 //images
 import logo from '../images/logos/horizontal@2x.png'
 
 const menuListItems = [
-    { name: 'Fidus Club', href: '#' },
-    { name: 'Fidus Empresas', href: '#' },
-    { name: 'Fidus Universitarios', href: '#' },
+    { name: 'Fidus Club', href: '/fidusclub' },
+    { name: 'Fidus Empresas', href: '/fidusempresas' },
+    { name: 'Fidus Universitarios', href: '/fidusuniversitarios' },
 ];
 
 const HeaderTop = () => {
   return(
     <div className="header-top">
         <figure className="header-logo-container">
-          <img src={logo} alt="Logo" className="header-logo" />
+          <Router>
+            <Link to='/'><img src={logo} alt="Logo" className="header-logo" /></Link>
+          </Router>
         </figure>
         <div className="header-search-container">
           <i className="header-search-icon"></i>
@@ -26,11 +30,12 @@ const HeaderTop = () => {
 
 const HeaderNav = () => {
   return(
-    <nav className="header-nav-container">
+    <Router>
+      <nav className="header-nav-container">
         <ul className="header-nav">
         { menuListItems.map(({ name, href }) => (
             <li key={name} className="header-list-item">
-                <a href={href} className="header-link-item">{name}</a>
+                <Link to={href} className="header-link-item">{name}</Link>
             </li>
         )) }
         </ul>
@@ -38,6 +43,7 @@ const HeaderNav = () => {
           <a href="#" className="header-button">Negocios</a>
         </span>
       </nav>
+    </Router>
   )
 }
 
