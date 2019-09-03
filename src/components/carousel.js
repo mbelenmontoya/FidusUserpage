@@ -15,25 +15,6 @@ const listImages = [
 ];
 
 const Carousel = () => {
-  return(
-    <div className="carousel" id="carousel">
-      <ul className="carousel-list">
-      { listImages.map(item => (
-        <li className="carousel-bullet"><span className="carousel-bullet-item"></span></li>
-      )) }
-      </ul>
-    {listImages.map(({image, frase}, i) => (
-      <div className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'} 
-      style={{backgroundImage:`url(${image})`}} key={i}>
-        <h1 className="carousel-title">{frase}</h1>
-        <button type="button" className="carousel-google-button"></button>
-        <button type="button" className="carousel-apple-button"></button>
-      </div>
-    ))}
-    </div>
-  );
-}
-
 
 //carousel
 var slideInterval = 4000;
@@ -62,5 +43,27 @@ function startPlayback() {
 }
 
 startPlayback();
+
+  return(
+    <div className="carousel" id="carousel">
+      <ul className="carousel-list">
+      { listImages.map(item => (
+        <li className="carousel-bullet"><span className="carousel-bullet-item"></span></li>
+      )) }
+      </ul>
+    {listImages.map(({image, frase}, i) => (
+      <div className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'} 
+      style={{backgroundImage:`url(${image})`}} key={i}>
+        <h1 className="carousel-title">{frase}</h1>
+        <button type="button" className="carousel-google-button"></button>
+        <button type="button" className="carousel-apple-button"></button>
+      </div>
+    ))}
+    </div>
+  );
+}
+
+
+
 
 export default Carousel;

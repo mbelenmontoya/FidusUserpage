@@ -6,6 +6,9 @@
     padding: 25px 50px;
     @include linear-gradient;
     align-items: center;
+    &::before{
+      height: 96px;
+    }
   }
   .header-nav-container{
     background-color: $f-primary-gray;

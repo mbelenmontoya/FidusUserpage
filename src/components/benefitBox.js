@@ -6,16 +6,7 @@ import noimage from '../images/assets/noimage.png'
 
 const BenefitTitle = props => {
   const {title} = props;
-  switch(title) {
-    case 'fidusclub':
-      return <h2 className="section-title">Fidus Club</h2>;
-    case 'fidusempresas':
-      return <h2 className="section-title">Fidus Empresas</h2>;
-    case 'fidusuniversitarios':
-      return <h2 className="section-title">Fidus Universidades</h2>;
-    default:
-      return <h2 className="section-title">Fidus</h2>;
-  }
+  return (<h2 className="section-title">{title}</h2>);
 }
 
 const Benefit = props => {
@@ -43,7 +34,7 @@ class BenefitCall extends Component{
  }
 
  componentDidMount(){
-   axios.get(`http://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
+   axios.get(`https://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.rewards;
      this.setState({ list });
@@ -63,10 +54,10 @@ class BenefitCall extends Component{
 }
 
 const BenefitBox = props => {
-  const {name, url, match} = props;
+  const {name, url, title} = props;
   return(
     <div className="benefit">
-       <BenefitTitle title={match !== undefined ? match.params.id : name} />
+       <BenefitTitle title={title} />
        <BenefitCall url={url} />
     </div>
   );
