@@ -1,8 +1,15 @@
 .section-title{
     color: $f-darker-gray;
     font-size: 26px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid $f-secondary-gray;
-    padding: 0 50px;
-    padding-top:60px;
+    margin-bottom: 50px;
+    padding: 30px 50px 10px 50px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 25%;
+      background-color: $f-secondary-gray;
+      bottom: 0;
+    }
   }

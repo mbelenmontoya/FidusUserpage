@@ -3,7 +3,7 @@
     background-color: $f-primary-blue;
     @include display-flex;
     @include property('justify-content', space-between);
-    padding: 25px 50px;
+    padding: 10px 50px;
     @include linear-gradient;
     align-items: center;
     &::before{
@@ -59,12 +59,12 @@
     font-weight: bold;
     color: $f-black;
     display: block;
-    padding: 20px 50px 20px 0;
+    padding: 10px 50px 10px 0;
     font-size: 16px;
   }
   .header-button{
      color: $f-secondary-blue;
-     padding: 20px 0 20px 30px;
+     padding: 10px 0 10px 30px;
      font-weight: bold;
      text-decoration: none;
      display: block;

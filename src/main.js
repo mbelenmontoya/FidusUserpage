@@ -10,6 +10,7 @@ import Home from './views/home'
 import BenefitView from './views/benefitview'
 import Faqs from './views/faqs'
 import Contact from './views/contact'
+import Detail from './views/detail'
 
 
 
@@ -30,6 +31,7 @@ const Main = () => {
         )) }
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/detail" component={Detail} />
       </Router>
       <Footer />
     </div>

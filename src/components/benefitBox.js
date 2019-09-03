@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { BrowserRouter as Router, Link } from "react-router-dom"
 
 import noimage from '../images/assets/noimage.png'
 
@@ -10,9 +11,10 @@ const BenefitTitle = props => {
 }
 
 const Benefit = props => {
-  const { image, logo, discount, name } = props;
+  const { image, logo, discount, name, id } = props;
   return (
-      <div className="benefit-box">
+    <Router>
+      <Link className="benefit-box" to='/detail'>
         <figure className="benefit-imagecontainer">
           <img src={image !== '' && image !== null ? image : noimage} alt="" className="benefit-image" />
         </figure>
@@ -23,7 +25,8 @@ const Benefit = props => {
             <h3 className="benefit-benefit">{discount}</h3>
           </div>
         </div>
-      </div>
+      </Link>
+    </Router>
   )
 }
 
@@ -45,7 +48,7 @@ class BenefitCall extends Component{
    return(
       <div className="benefit-containerboxes">
       {this.state.list.map(reward => 
-        <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} />     
+        <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} id={reward.id} />     
       )}
       </div>
    );

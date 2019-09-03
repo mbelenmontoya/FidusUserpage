@@ -1,0 +1,82 @@
+.detail{
+  background-color: $f-primary-gray;
+  padding-bottom: 90px;
+ .detail-box{
+   max-width: 768px;
+   margin: 0 auto;
+ }
+ .detail-map{
+   min-height: 200px;
+   background-color: $f-secondary-blue;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   margin-bottom: 20px;
+   box-shadow: -4.1px -4px 10.1px 0 rgba(0, 0, 0, 0.05);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: $f-white;
+   font-size: 28px; 
+ }
+ .detail-info{
+   min-height: 200px;
+   background-color: $f-white;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   box-shadow: -4.1px -4px 10.1px 0 rgba(0, 0, 0, 0.05);
+   padding: 30px 0;
+   text-align: center;
+ }
+
+ .detail-benefitinfo{
+   display: flex;
+   max-width: 500px;
+   margin: 0 auto;
+   align-items: center;
+ }
+
+ .detail-logocontainer{
+    max-width: 100px;
+    border: 1px solid $f-terciary-gray;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+ }
+ .detail-title{
+   font-size: 30px;
+   font-weight: bold;
+ }
+ .detail-contact{
+   color: $f-cuarter-gray;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .detail-benefit{
+   margin-top: 40px;
+   font-size: 26px;
+   font-weight: normal;
+ }
+ .detail-conditions{
+   font-size: 16px;
+   color: $f-cuarter-gray;
+ }
+ .detail-button{
+   padding: 20px 70px;
+   color: $f-white;
+   display:inline-block;
+   background: linear-gradient(to right, $f-secondary-blue 0%, $f-primary-blue 100%);
+   margin: 20px 0;
+   border-radius: 15px;
+   cursor: pointer;
+ }
+ .detail-termscondicions{
+   display:block;
+   color: $f-cuarter-gray;
+   font-size: 14px;
+   text-decoration: underline;
+   cursor: pointer; 
+ }
+}
