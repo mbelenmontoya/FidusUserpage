@@ -13,7 +13,6 @@ const BenefitTitle = props => {
 const Benefit = props => {
   const { image, logo, discount, name, id } = props;
   return (
-    <Router>
       <Link className="benefit-box" to='/detail'>
         <figure className="benefit-imagecontainer">
           <img src={image !== '' && image !== null ? image : noimage} alt="" className="benefit-image" />
@@ -26,15 +25,18 @@ const Benefit = props => {
           </div>
         </div>
       </Link>
-    </Router>
   )
 }
 
 
-class BenefitCall extends Component{
- state = {
-   list: []
- }
+class BenefitBox extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
+
 
  componentDidMount(){
    axios.get(`https://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
@@ -46,24 +48,16 @@ class BenefitCall extends Component{
 
  render(){
    return(
-      <div className="benefit-containerboxes">
-      {this.state.list.map(reward => 
-        <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} id={reward.id} />     
-      )}
+     <div className="benefit">
+      <BenefitTitle title={this.props.title} />
+        <div className="benefit-containerboxes">
+        {this.state.list.map(reward => 
+          <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} id={reward.id} />     
+        )}
+        </div>
       </div>
    );
  }
-
-}
-
-const BenefitBox = props => {
-  const {name, url, title} = props;
-  return(
-    <div className="benefit">
-       <BenefitTitle title={title} />
-       <BenefitCall url={url} />
-    </div>
-  );
 }
 
 

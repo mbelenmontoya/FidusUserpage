@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Link } from "react-router-dom"
+
+
+import Popup from '../components/popup'
 
 import imgenLogo from '../images/assets/logobox.jpg'
 
@@ -16,7 +18,18 @@ const DetailMap = () => {
   );
 }
 
-const DetailInfo = () =>{
+class DetailInfo extends Component {
+  constructor(props){  
+    super(props);  
+    this.state = { showPopup: false };  
+  }
+
+  togglePopup() {  
+    this.setState({  
+        showPopup: !this.state.showPopup  
+    });  
+ }    
+  render(){
   return(
     <div className="detail-info">
       <div className="detail-benefitinfo">
@@ -35,16 +48,24 @@ const DetailInfo = () =>{
       </div>
       <h4 className="detail-benefit">¡Tenés un 50% de descuento!</h4>
       <p className="detail-conditions">Una vez reservado el premio, tenés 24hs para ir hasta el local y reclamarlo</p>
-      <a className="detail-button">Obtener beneficio</a>
+      <button onClick={this.togglePopup.bind(this)} className="detail-button">Obtener beneficio</button>
       <a className="detail-termscondicions">Términos y condiciones</a>
+      {this.state.showPopup ?  
+      <Popup closePopup={this.togglePopup.bind(this)} />  
+      : null  
+      }  
     </div>
   );
+  }
 }
 
-class DetailCall extends Component{
-   state = {
-   list: []
- }
+class DetailBox extends Component{
+   constructor(props){
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
 
  componentDidMount(){
    axios.get(`https://stage.fidus.com.ar/api/v1/landing/featured_mobile_rewards`)
@@ -57,22 +78,17 @@ class DetailCall extends Component{
 
   render(){
     return(
-      <div className="detail-box">
-        <DetailMap />
-        <DetailInfo />
+      <div className="detail">
+      <DetailTitle />
+        <div className="detail-box">
+          <DetailMap />
+          <DetailInfo  />
+        </div>
       </div>
     );
   }
 }
 
-const DetailBox = () => {
-  return(
-    <div className="detail">
-      <DetailTitle />
-      <DetailCall />
-    </div>
-  );
-}
 
 
 export default DetailBox

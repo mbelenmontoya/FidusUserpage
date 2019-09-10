@@ -2,6 +2,7 @@
 @import "./partials/_mixins.scss";
 @import "./partials/_titles.scss";
 @import "./partials/_ribbon.scss";
+@import "./partials/_buttons.scss";
 
 //font
 
@@ -35,3 +36,4 @@ html{
 @import './components/faqs.scss';
 @import './components/contact.scss';
 @import './components/detail.scss';
+@import './components/popup.scss';

@@ -16,19 +16,21 @@ const Footer = () => {
         </figure>
         <ul className="footer-listlinks">
           <li className="footer-item">
-            <Router>
               <Link to='/faqs' className="footer-link">Preguntas Frecuentes</Link>
-            </Router>
           </li>
           <li className="footer-item">
-            <Router>
               <Link to='/contact' className="footer-link">Contacto</Link>
-            </Router>
           </li>
           <li className="footer-item -max-width">
-            <a href="#" className="footer-link"><img src={fbimage} alt="facebook logo"    className="footer-image" /></a> 
-            <a href="#" className="footer-link"><img src={igimage} alt="facebook logo" className="footer-image" /></a> 
-            <a href="#" className="footer-link"><img src={lkimage} alt="facebook logo" className="footer-image" /></a>
+            <a href="https://www.facebook.com/fiduspremios" target="_blank" className="footer-link">
+              <img src={fbimage} alt="facebook logo"    className="footer-image" />
+            </a> 
+            <a href="https://www.instagram.com/fiduspremios/" className="footer-link"  target="_blank">
+              <img src={igimage} alt="instagram logo" className="footer-image" />
+            </a> 
+            <a href="https://www.linkedin.com/company/fidus-sum%C3%A1-puntos-gan%C3%A1-premios/" className="footer-link"  target="_blank">
+              <img src={lkimage} alt="linkedin logo" className="footer-image" />
+            </a>
           </li>
         </ul>
       </div>

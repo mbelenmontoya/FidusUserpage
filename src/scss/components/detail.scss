@@ -64,13 +64,15 @@
    color: $f-cuarter-gray;
  }
  .detail-button{
-   padding: 20px 70px;
+   padding: 15px 50px;
    color: $f-white;
    display:inline-block;
    background: linear-gradient(to right, $f-secondary-blue 0%, $f-primary-blue 100%);
    margin: 20px 0;
    border-radius: 15px;
    cursor: pointer;
+   @include box-sizing;
+   font-size: 14px;
  }
  .detail-termscondicions{
    display:block;

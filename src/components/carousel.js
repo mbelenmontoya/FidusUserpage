@@ -55,8 +55,8 @@ startPlayback();
       <div className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'} 
       style={{backgroundImage:`url(${image})`}} key={i}>
         <h1 className="carousel-title">{frase}</h1>
-        <button type="button" className="carousel-google-button"></button>
-        <button type="button" className="carousel-apple-button"></button>
+        <button type="button" className="google-button"></button>
+        <button type="button" className="apple-button"></button>
       </div>
     ))}
     </div>

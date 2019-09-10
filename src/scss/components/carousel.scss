@@ -26,23 +26,7 @@
     right: 50px;
     z-index: 1;
   }
-  .carousel-google-button{
-    background-image: url('../../images/assets/googleplay@2x.jpg');
-  }
-  .carousel-apple-button{
-    background-image: url('../../images/assets/appstore@2x.jpg');
-  }
-  .carousel-google-button,
-  .carousel-apple-button{
-    padding: 20px 65px;
-    background-size: cover;
-    margin-right: 30px;
-    margin-top: 30px;
-    @include box-sizing;
-    background-position: center;
-    border: none;
-    cursor: pointer;
-  }
+  
   .carousel-bullet{
     padding: 5px;
   }

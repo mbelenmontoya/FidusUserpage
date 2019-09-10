@@ -34,7 +34,7 @@ const NewsBody = () => {
   return (
     <div className="news-container">
       <span className="box-title">Nuevos beneficios todas las semanas</span>
-      <a href="#" className="action-button">Ver más</a>
+      <a className="action-button">Ver más</a>
     </div>
   );
 }

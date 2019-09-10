@@ -15,9 +15,7 @@ const HeaderTop = () => {
   return(
     <div className="header-top">
         <figure className="header-logo-container">
-          <Router>
             <Link to='/'><img src={logo} alt="Logo" className="header-logo" /></Link>
-          </Router>
         </figure>
         <div className="header-search-container">
           <i className="header-search-icon"></i>
@@ -30,7 +28,6 @@ const HeaderTop = () => {
 
 const HeaderNav = () => {
   return(
-    <Router>
       <nav className="header-nav-container">
         <ul className="header-nav">
         { menuListItems.map(({ name, href }) => (
@@ -43,7 +40,6 @@ const HeaderNav = () => {
           <a href="#" className="header-button">Negocios</a>
         </span>
       </nav>
-    </Router>
   )
 }
 
