@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Link } from "react-router-dom"
 
 import fidusapp from '../images/assets/fidusapp.png'
 import logovertical from '../images/logos/vertical@2x.png'

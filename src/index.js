@@ -32,7 +32,7 @@ const Main = (
         )) }
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/detail" component={Detail} />
+        <Route path="/detail" component={Detail} / >
         </Switch>
       <Footer />
     </div>

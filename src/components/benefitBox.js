@@ -11,9 +11,24 @@ const BenefitTitle = props => {
 }
 
 const Benefit = props => {
-  const { image, logo, discount, name, id } = props;
+  const { image, logo, discount, name, id, lat, lng, condition, fburl, igurl, phone, weburl } = props;
+
   return (
-      <Link className="benefit-box" to='/detail'>
+      <Link className="benefit-box" to={{
+        pathname: '/detail',
+        state: {
+          logo: {logo},
+          discount: {discount},
+          name: {name},
+          lat: {lat},
+          lng: {lng},
+          condition: {condition},
+          fburl: {fburl},
+          igurl: {igurl},
+          phone: {phone},
+          weburl: {weburl}
+        }
+      }}>
         <figure className="benefit-imagecontainer">
           <img src={image !== '' && image !== null ? image : noimage} alt="" className="benefit-image" />
         </figure>
@@ -52,7 +67,20 @@ class BenefitBox extends Component{
       <BenefitTitle title={this.props.title} />
         <div className="benefit-containerboxes">
         {this.state.list.map(reward => 
-          <Benefit image={reward.picture} logo={reward.place_logo} discount={reward.description} name={reward.place_name} id={reward.id} />     
+          <Benefit 
+          image={reward.picture} 
+          logo={reward.place_logo} 
+          discount={reward.description} 
+          name={reward.place_name} 
+          id={reward.id} 
+          lat={reward.lat}
+          lng={reward.lng}
+          condition={reward.condition}
+          fburl={reward.place_facebook}
+          igurl={reward.place_instagram}
+          phone={reward.place_phone}
+          weburl={reward.place_webpage}
+          />     
         )}
         </div>
       </div>
