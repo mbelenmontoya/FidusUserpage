@@ -15,21 +15,15 @@ import Contact from './views/contact'
 import Detail from './views/detail'
 
 
-const benefitboxItems = [
-    { href: '/fidusclub', url: 'featured_mobile_rewards', categorie: 'categories', title:'Fidus Club' },
-    { href: '/fidusempresas', url: 'featured_mobile_rewards_companies', categorie: 'categories_companies', title: 'Fidus Empresas' },
-    { href: '/fidusuniversitarios' , url: 'featured_mobile_rewards_universities', categorie: 'categories_universities', title: 'Fidus Universitarios' },
-];
-
 const Main = (
     <Router>
     <div className="main">
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        { benefitboxItems.map(({ href, url, categorie, title }) => (
-          <Route path={href} exact component={() => <BenefitView name={href} url={url} categorie={categorie} title={title} />} />
-        )) }
+        <Route exact path="/fidusclub" component={() => <BenefitView name='/fidusclub' url='featured_mobile_rewards' categorie='categories' title='Fidus Club' />} />
+        <Route exact path="/fidusempresas" component={() => <BenefitView name='/fidusempresas' url='featured_mobile_rewards_companies' categorie='categories_companies' title='Fidus Empresas' />} />
+        <Route exact path="/fidusuniversitarios" component={() => <BenefitView name='/fidusuniversitarios' url='featured_mobile_rewards_universities' categorie='categories_universities' title='Fidus Universitarios' />} />
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/contact" component={Contact} />
         <Route path="/detail" component={Detail} / >

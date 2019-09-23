@@ -7,7 +7,7 @@ import bg3 from '../images/assets/bg3@2x.jpg'
 
 const listImages = [
   {image : `${bg1}` , 
-  frase: 'Unite a Fidus hoy y accedé a beneficios infinitos' },
+  frase: "Unite a Fidus hoy y \n accedé a beneficios infinitos" },
   {image: `${bg2}` , 
   frase: 'Encontrá tus beneficios con la App de Fidus' },
   {image: `${bg3}` ,

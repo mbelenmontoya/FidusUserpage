@@ -2,14 +2,14 @@
     color: $f-darker-gray;
     font-size: 26px;
     margin-bottom: 50px;
-    padding: 30px 50px 10px 50px;
+    padding: 30px 70px 10px 70px;
     position: relative;
     &::before{
       content: '';
       position: absolute;
       height: 1px;
       width: 25%;
-      background-color: $f-secondary-gray;
+      background-color: $f-cuarter-gray;
       bottom: 0;
     }
   }

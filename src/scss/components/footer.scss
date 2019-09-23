@@ -1,8 +1,9 @@
 .footer{
-  background-color: $f-terciary-blue;
+  background-color: $f-primary-blue;
   @include display-flex;
   position: relative;
   padding: 40px 50px;
+  border-top: 100px solid $f-primary-gray;
   @include property('justify-content', space-between);
   @include linear-gradient;
   box-sizing: border-box;
@@ -11,7 +12,7 @@
     flex: 3;
   }
   .footer-logocontainer{
-    max-width: 150px;
+    max-width: 100px;
     margin-right: 100px;
   }
   .footer-fidusapp{
@@ -20,7 +21,8 @@
   }
   .footer-fiduscontainer{
     position: absolute;
-    top: -200px;
+    max-width: 250px;
+    bottom: -30px;
   }
   .footer-listlinks{
     list-style: none;
@@ -41,11 +43,10 @@
     font-weight: bold;
   }
   .fidus-copyright{
-    position: absolute;
-    bottom: -30px;
     color: $f-white;
     font-size: 12px;
     white-space: nowrap;
+
   }
   .footer-image{
     max-width: 30px;

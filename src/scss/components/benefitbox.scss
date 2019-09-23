@@ -1,21 +1,25 @@
 .benefit{
-  background-color: $f-primary-gray;
   .benefit-containerboxes{
     @include display-flex;
     @include property('flex-wrap', wrap);
-    @include property('justify-content', flex-start);
-    padding: 0 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 80px;
   }
   .benefit-box{
-    max-width: 300px;
+    max-width: 20%;
+    min-height: 445px;
     background: $f-white;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     overflow: hidden;
     margin-bottom: 50px;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 50px;
     text-decoration: none;
+    &:nth-child(4n){
+      margin-right: 0;
+    }
   }
   .benefit-imagecontainer{
     height: 200px;
@@ -38,7 +42,7 @@
     max-width: 120px;
   }
   .benefit-image{
-    max-width: 130%;
+    max-width: 160%;
   }
   .benefit-name{
     opacity: 1;

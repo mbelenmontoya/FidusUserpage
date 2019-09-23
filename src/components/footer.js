@@ -37,8 +37,10 @@ const Footer = () => {
       <div className="footer-fidusapp">
         <figure className="footer-fiduscontainer">
           <img src={fidusapp} alt="" className="footer-fidusimage" />
+          <figcaption>
+            <span className="fidus-copyright">c Derechos de autor 2019 Fidus. Todos los derechos reservados.</span>
+          </figcaption>
         </figure>
-        <span className="fidus-copyright">c Derechos de autor 2019 Fidus. Todos los derechos reservados.</span>
       </div>
     </footer>
   );

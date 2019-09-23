@@ -4,19 +4,14 @@
   position: relative;
   align-items: center;
   text-align: right;
-  padding-top: 30px;
   @include box-sizing;
   @include linear-gradient;
-  .banner-imagecontainer,
-  .banner-contentcontainer{
-    flex: 1;
-  }
+  justify-content: space-around;
+  padding: 30px 70px;
   .banner-imagecontainer,{
-    padding-left: 100px;
+    max-width: 450px;
   }
-  .banner-contentcontainer{
-    padding-right: 100px;
-  }
+
   .banner-title{
     color: $f-white;
     font-size: 40px;

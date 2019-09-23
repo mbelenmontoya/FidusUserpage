@@ -3,19 +3,19 @@
     background-color: $f-primary-blue;
     @include display-flex;
     @include property('justify-content', space-between);
-    padding: 10px 50px;
+    padding: 30px 70px;
     @include linear-gradient;
     align-items: center;
     &::before{
-      height: 96px;
+      height: 106px;
     }
   }
   .header-nav-container{
     background-color: $f-primary-gray;
-    border-bottom: 1px solid $f-secondary-gray;
+    border-bottom: 1px solid $f-cuarter-gray;
     @include display-flex;
     @include property('justify-content', space-between);
-    padding: 0 50px;
+    padding: 0 70px;
   }
   .header-logo-container{
     max-width: 160px;
