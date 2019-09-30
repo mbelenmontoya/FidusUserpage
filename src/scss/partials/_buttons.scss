@@ -1,17 +1,18 @@
 .google-button{
-    background-image: url('../../images/assets/googleplay@2x.jpg');
+    background-image: url('../../images/assets/googleplay@2x.png');
 }
 .apple-button{
-    background-image: url('../../images/assets/appstore@2x.jpg');
+    background-image: url('../../images/assets/appstore@2x.png');
 }
 .google-button,
 .apple-button{
-    padding: 20px 65px;
     background-size: cover;
-    margin-right: 30px;
-    margin-top: 30px;
+    margin: 30px 30px 30px 0;
     @include box-sizing;
     background-position: center;
     border: none;
     cursor: pointer;
+    width: 120px;
+    height: 40px;
+    display: inline-block;
 }

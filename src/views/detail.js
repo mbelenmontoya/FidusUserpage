@@ -3,6 +3,13 @@ import axios from 'axios'
 
 
 import Popup from '../components/popup'
+import Map from '../components/mapcontainer'
+
+//images
+import webimg from '../images/assets/weburl.png'
+import phoneimg from '../images/assets/phone.png'
+import igimg from '../images/assets/iglogo.png'
+import fbimg from '../images/assets/fblogo.png'
 
 const DetailTitle = () => {
   return (<h2 className="section-title">Beneficios Gastronomia</h2>);
@@ -12,7 +19,7 @@ const DetailMap = props => {
 const {lat, lng} = props
   return (
     <div className="detail-map">
-      MAPA
+      <Map />
     </div>
   );
 }
@@ -51,17 +58,24 @@ class DetailInfo extends Component {
             {name}
           </h5>
           <div className="detail-contact">
-            <span className="title-icon">{weburl}</span>
-            <span className="title-icon">{phone}</span>
-            <span className="title-icon">{igurl}</span>
-            <span className="title-icon">{fburl}</span>
+            <a className="title-icon" href={weburl}>
+              <img src={webimg} alt="web" className="image-icon" />
+            </a>
+            <a className="title-icon">
+              <img src={phoneimg} alt="phone" className="image-icon" />{phone}
+            </a>
+            <a className="title-icon" href={igurl}>
+              <img src={igimg} alt="instagram" className="image-icon" />
+            </a>
+            <a className="title-icon" href={fburl}>
+              <img src={fbimg} alt="facebook" className="image-icon" />
+            </a>
           </div>
         </div>
       </div>
       <h4 className="detail-benefit">{discount}</h4>
       <p className="detail-conditions">{condition}</p>
       <button onClick={this.togglePopup.bind(this)} className="detail-button">Obtener beneficio</button>
-      <a className="detail-termscondicions">Términos y condiciones</a>
       {this.state.showPopup ?  
       <Popup closePopup={this.togglePopup.bind(this)} />  
       : null  

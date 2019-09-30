@@ -55,8 +55,8 @@ startPlayback();
       <div className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'} 
       style={{backgroundImage:`url(${image})`}} key={i}>
         <h1 className="carousel-title">{frase}</h1>
-        <button type="button" className="google-button"></button>
-        <button type="button" className="apple-button"></button>
+        <a href="ttps://itunes.apple.com/us/app/fidus/id1459950785?l=es&ls=1&mt=8" className="google-button"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.fidus.fidusapp" className="apple-button"></a>
       </div>
     ))}
     </div>

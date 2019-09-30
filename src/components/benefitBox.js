@@ -14,7 +14,7 @@ const Benefit = props => {
   const { image, logo, discount, name, id, lat, lng, condition, fburl, igurl, phone, weburl } = props;
 
   return (
-      <Link className="benefit-box" to={{
+      <Link className="benefit-box flip-card" to={{
         pathname: '/detail',
         state: {
           logo: {logo},
@@ -29,19 +29,32 @@ const Benefit = props => {
           weburl: {weburl}
         }
       }}>
-        <figure className="benefit-imagecontainer">
-          <img src={image !== '' && image !== null ? image : noimage} alt="" className="benefit-image" />
-        </figure>
-        <div className="benefit-contentbox">
-          <img src={logo} alt="logo del beneficio" className="benefit-logo" />
-          <div className="benefit-contentcontainer">
-            <h4 className="benefit-name">{name}</h4>
-            <h3 className="benefit-benefit">{discount}</h3>
+        <div className="benefit-imagecontainer" 
+            style={{backgroundImage: `url(${image !== '' && image !== null ? image : noimage})`}}>
+          </div>
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="benefit-contentbox">
+              <img src={logo} alt="logo del beneficio" className="benefit-logo" />
+              <div className="benefit-contentcontainer">
+                <h4 className="benefit-name">{name}</h4>
+                <h3 className="benefit-benefit">{discount}</h3>
+              </div>
+            </div>
+          </div>
+          <div className="flip-card-back">
+            <div className="benefit-contentbox">
+              <div className="benefit-contentcontainer">
+                <h3 className="benefit-benefit">{discount}</h3>
+                <a className="benefit-button">Canejar</a>
+              </div>
+            </div>
           </div>
         </div>
       </Link>
   )
 }
+
 
 
 class BenefitBox extends Component{
@@ -54,7 +67,7 @@ class BenefitBox extends Component{
 
 
  componentDidMount(){
-   axios.get(`https://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
+   axios.get(`https://dashboard.fidus.com.ar/api/v1/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.rewards;
      this.setState({ list });

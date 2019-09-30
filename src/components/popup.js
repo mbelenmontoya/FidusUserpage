@@ -13,8 +13,8 @@ class Popup extends Component{
           </figure>
           <div className="popup-containettext">
             <h1 className="popup-title">Bajate nuestra app para reservar tu premio y encontrar muchos beneficios más</h1>
-            <button type="button" className="google-button"></button>
-            <button type="button" className="apple-button"></button>
+            <a href="https://itunes.apple.com/us/app/fidus/id1459950785?l=es&ls=1&mt=8" className="google-button"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.fidus.fidusapp" className="apple-button"></a>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
 const CategorieTitle = () => {
   return (
     <h2 className="section-title">Categorías</h2>

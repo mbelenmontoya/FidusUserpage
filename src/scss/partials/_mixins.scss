@@ -38,3 +38,27 @@
         z-index: 0;
     }
 }
+
+@mixin gradientAnimation( $start, $end, $transTime ){
+    background-size: 100%;
+    background-image: linear-gradient($start, $end);
+    position: relative;
+    z-index: 100;
+    &:before {
+        background-image: linear-gradient($end, $start);
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -100;
+        transition: opacity $transTime;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
