@@ -14,6 +14,7 @@ import BenefitView from './views/benefitview'
 import Faqs from './views/faqs'
 import Contact from './views/contact'
 import Detail from './views/detail'
+import Search from './views/search'
 
 const browserHistory = createBrowserHistory();
 
@@ -24,7 +25,7 @@ browserHistory.listen((location, action) => {
 const Main = (
     <Router history={browserHistory}>
     <div className="main">
-      <Header />
+      <Header history={browserHistory}/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/fidusclub" component={() => <BenefitView name='/fidusclub' url='featured_mobile_rewards' categorie='categories' title='Fidus Club' />} />
@@ -32,6 +33,7 @@ const Main = (
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/contact" component={Contact} />
         <Route path="/detail/:id" component={Detail} / >
+        <Route path="/search/:value" component={Search} / >
         </Switch>
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 
 //images
@@ -9,7 +9,12 @@ const menuListItems = [
     { name: 'Fidus Universitarios', href: '/fidusuniversitarios' },
 ];
 
-const HeaderTop = () => {
+const HeaderTop = props => {
+  const [searchValue, setSearchValue] = useState('');
+  const searchRewards = (event) => {
+      event.preventDefault();
+      props.history.push(`/search/${searchValue}`);
+  };
   return(
     <div className="header-top">
         <figure className="header-logo-container">
@@ -17,7 +22,15 @@ const HeaderTop = () => {
         </figure>
         <div className="header-search-container">
           <i className="header-search-icon"></i>
-          <input type="text" placeholder="Buscá tu beneficio" className="header-search" />
+          <form onSubmit={searchRewards}>
+            <input
+              type="text"
+              placeholder="Buscá tu beneficio"
+              className="header-search"
+              value={searchValue}
+              onChange={event => setSearchValue(event.target.value)}
+              />
+          </form>
         </div>
     </div>
   );
@@ -40,10 +53,10 @@ const HeaderNav = () => {
   )
 };
 
-const Header = () => {
+const Header = props => {
   return (
     <header className="header">
-      <HeaderTop />
+      <HeaderTop history={props.history} />
       <HeaderNav />
     </header>
 )};

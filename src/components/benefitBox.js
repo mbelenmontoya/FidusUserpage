@@ -53,9 +53,7 @@ const Benefit = props => {
   )
 }
 
-
-
-class BenefitBox extends Component{
+class BenefitBox extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -63,8 +61,11 @@ class BenefitBox extends Component{
     }
   }
 
-
- componentDidMount(){
+ componentDidMount() {
+   if (this.props.list) {
+     this.setState({ list: this.props.list })
+     return;
+   }
    axios.get(`https://dashboard.fidus.com.ar/api/v1/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.rewards;
