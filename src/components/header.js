@@ -1,13 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 
 //images
 import logo from '../images/logos/horizontal@2x.png'
 
 const menuListItems = [
     { name: 'Fidus Club', href: '/fidusclub' },
-    { name: 'Fidus Empresas', href: '/fidusempresas' },
     { name: 'Fidus Universitarios', href: '/fidusuniversitarios' },
 ];
 
@@ -23,8 +21,7 @@ const HeaderTop = () => {
         </div>
     </div>
   );
-}
-  
+};
 
 const HeaderNav = () => {
   return(
@@ -41,14 +38,14 @@ const HeaderNav = () => {
         </span>
       </nav>
   )
-}
+};
 
 const Header = () => {
   return (
     <header className="header">
-        <HeaderTop />
-        <HeaderNav />
-      </header>
+      <HeaderTop />
+      <HeaderNav />
+    </header>
 )};
 
-export default Header; 
+export default Header;

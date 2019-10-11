@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import fidusapp from '../images/assets/fidusapp.png'
 import logovertical from '../images/logos/vertical@2x.png'
@@ -22,13 +22,13 @@ const Footer = () => {
               <Link to='/contact' className="footer-link">Contacto</Link>
           </li>
           <li className="footer-item -max-width">
-            <a href="https://www.facebook.com/fiduspremios" target="_blank" className="footer-link">
+            <a href="https://www.facebook.com/fiduspremios" target="_blank" className="footer-link" rel="noopener noreferrer">
               <img src={fbimage} alt="facebook logo"    className="footer-image" />
-            </a> 
-            <a href="https://www.instagram.com/fiduspremios/" className="footer-link"  target="_blank">
+            </a>
+            <a href="https://www.instagram.com/fiduspremios/" className="footer-link" target="_blank" rel="noopener noreferrer">
               <img src={igimage} alt="instagram logo" className="footer-image" />
-            </a> 
-            <a href="https://www.linkedin.com/company/fidus-sum%C3%A1-puntos-gan%C3%A1-premios/" className="footer-link"  target="_blank">
+            </a>
+            <a href="https://www.linkedin.com/company/fidus-sum%C3%A1-puntos-gan%C3%A1-premios/" className="footer-link"  target="_blank" rel="noopener noreferrer">
               <img src={lkimage} alt="linkedin logo" className="footer-image" />
             </a>
           </li>
@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
       <div className="footer-fidusapp">
         <figure className="footer-fiduscontainer">
-          <img src={fidusapp} alt="" className="footer-fidusimage" />
+          <Link to='/'><img src={fidusapp} alt="" className="footer-fidusimage" /></Link>
           <figcaption>
             <span className="fidus-copyright">c Derechos de autor 2019 Fidus. Todos los derechos reservados.</span>
           </figcaption>

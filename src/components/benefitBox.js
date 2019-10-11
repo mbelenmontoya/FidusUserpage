@@ -15,7 +15,7 @@ const Benefit = props => {
 
   return (
       <Link className="benefit-box flip-card" to={{
-        pathname: '/detail',
+        pathname: `/detail/${id}`,
         state: {
           logo: {logo},
           discount: {discount},
@@ -29,7 +29,7 @@ const Benefit = props => {
           weburl: {weburl}
         }
       }}>
-        <div className="benefit-imagecontainer" 
+        <div className="benefit-imagecontainer"
             style={{backgroundImage: `url(${image !== '' && image !== null ? image : noimage})`}}>
           </div>
         <div className="flip-card-inner">
@@ -43,11 +43,9 @@ const Benefit = props => {
             </div>
           </div>
           <div className="flip-card-back">
-            <div className="benefit-contentbox">
-              <div className="benefit-contentcontainer">
-                <h3 className="benefit-benefit">{discount}</h3>
-                <a className="benefit-button">Canejar</a>
-              </div>
+            <div className="benefit-back-container">
+              <h3 className="benefit-benefit">{discount}</h3>
+              <button className="benefit-button">Canjear</button>
             </div>
           </div>
         </div>
@@ -79,13 +77,14 @@ class BenefitBox extends Component{
      <div className="benefit">
       <BenefitTitle title={this.props.title} />
         <div className="benefit-containerboxes">
-        {this.state.list.map(reward => 
-          <Benefit 
-          image={reward.picture} 
-          logo={reward.place_logo} 
-          discount={reward.description} 
-          name={reward.place_name} 
-          id={reward.id} 
+        {this.state.list.map(reward =>
+          <Benefit
+          key={reward.id}
+          image={reward.picture}
+          logo={reward.place_logo}
+          discount={reward.description}
+          name={reward.place_name}
+          id={reward.id}
           lat={reward.lat}
           lng={reward.lng}
           condition={reward.condition}
@@ -93,7 +92,7 @@ class BenefitBox extends Component{
           igurl={reward.place_instagram}
           phone={reward.place_phone}
           weburl={reward.place_webpage}
-          />     
+          />
         )}
         </div>
       </div>

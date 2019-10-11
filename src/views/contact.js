@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Form = () => {
   return (
@@ -22,29 +22,26 @@ const Button = () => {
   );
 }
 
-function Response({ match }) {
-  return (
-    <div>
-      {match.params.contactId === 'user' ? <Form /> : <Button />}
-    </div>
-  );
-}
-
 const Contact = ({ match }) => {
+  const [activeTab, setActiveTab] = useState('user');
+  const isUser = activeTab === 'user';
+
   return (
     <Router>
       <div className="contact">
       <div className="contact-content">
           <h2 className="contact-title">¿Cómo podemos ayudarte?</h2>
           <ul className="contact-list">
-            <li className="contact-item -active">
-              <Link to={`${match.url}/user`} className="contact-link">Soy Usuario</Link>
+            <li onClick={() => setActiveTab('user')} className={`contact-item ${isUser ? '-active' : ''}`}>
+              <p className="contact-link">Soy Usuario</p>
             </li>
-            <li className="contact-item">
-              <Link to={`${match.url}/business`} className="contact-link">Soy Comercio</Link>
+            <li onClick={() => setActiveTab('business')} className={`contact-item ${isUser ? '' : '-active'}`}>
+              <p className="contact-link">Soy Comercio</p>
             </li>
           </ul>
-          <Route path={`${match.path}/:contactId`} render={() => <Form />} component={Response} />
+          <div>
+            {isUser ? <Form /> : <Button />}
+          </div>
         </div>
       </div>
     </Router>

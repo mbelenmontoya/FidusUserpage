@@ -1,29 +1,27 @@
 .detail{
   padding-bottom: 90px;
+  margin-top: 30px;
+
  .detail-box{
    max-width: 768px;
    margin: 0 auto;
  }
+
  .detail-map{
-   min-height: 200px;
+   min-height: 250px;
    background-color: $f-secondary-blue;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
    margin-bottom: 20px;
    box-shadow: -4.1px -4px 10.1px 0 rgba(0, 0, 0, 0.05);
-   display: flex;
    justify-content: center;
    align-items: center;
    color: $f-white;
-   font-size: 28px; 
+   font-size: 28px;
    position: relative;
    overflow: hidden;
-   div{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   }
  }
+ 
  .detail-info{
    min-height: 200px;
    background-color: $f-white;
@@ -82,6 +80,7 @@
    background: linear-gradient(to right, $f-secondary-blue 0%, $f-primary-blue 100%);
    margin: 20px 0;
    border-radius: 15px;
+   border-color: transparent;
    cursor: pointer;
    @include box-sizing;
    font-size: 14px;
@@ -91,7 +90,7 @@
    color: $f-cuarter-gray;
    font-size: 14px;
    text-decoration: underline;
-   cursor: pointer; 
+   cursor: pointer;
  }
  .title-icon{
    display: flex;
