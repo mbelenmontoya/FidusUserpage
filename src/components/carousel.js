@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState } from 'react'
 
 //images
 import bg1 from '../images/assets/bg1@2x.jpg'

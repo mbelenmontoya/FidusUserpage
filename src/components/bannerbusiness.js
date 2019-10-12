@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { businessUrl } from '../config'
 import imagenbanner from '../images/assets/imagenbanner.png'
 
 const BannerBusiness = () =>{
@@ -10,7 +11,7 @@ const BannerBusiness = () =>{
       </figure>
       <div className="banner-contentcontainer">
         <h2 className="banner-title">¿Tenés un negocio?<br />Contactate con<br /> nosotros</h2>
-        <a href="#" className="banner-button">Contactar</a>
+        <a href={businessUrl} className="banner-button">Contactar</a>
       </div>
     </div>
   );

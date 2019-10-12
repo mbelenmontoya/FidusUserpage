@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
+import { businessUrl } from '../config'
 
 //images
 import logo from '../images/logos/horizontal@2x.png'
@@ -47,7 +48,7 @@ const HeaderNav = () => {
         )) }
         </ul>
         <span className="header-business-button">
-          <a href="#" className="header-button">Negocios</a>
+          <a href={businessUrl} className="header-button">Negocios</a>
         </span>
       </nav>
   )
