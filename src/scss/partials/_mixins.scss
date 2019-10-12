@@ -37,6 +37,13 @@
         transform: skew(-35deg);
         z-index: 0;
     }
+    @media only screen and (max-width: 480px) {
+      &:before {
+        left: 0;
+        width: 0px;
+        transform: none;
+      }
+    }
 }
 
 @mixin gradientAnimation( $start, $end, $transTime ){

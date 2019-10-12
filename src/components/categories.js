@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { baseUrl } from '../config'
 
 const CategorieTitle = () => {
   return (
@@ -26,7 +26,7 @@ class CategorieInfo extends Component{
 
 
  componentDidMount(){
-   axios.get(`https://stage.fidus.com.ar/api/v1/landing/${this.props.url}`)
+   axios.get(`${baseUrl}/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.categories;
      this.setState({ list });
@@ -36,8 +36,8 @@ class CategorieInfo extends Component{
  render(){
    return(
       <div className="categorie-container">
-      {this.state.list.map(categorie => 
-        <CategorieBox image={categorie.picture} title={categorie.name} count={categorie.reward_count}  />     
+      {this.state.list.map(categorie =>
+        <CategorieBox image={categorie.picture} title={categorie.name} count={categorie.reward_count}  />
       )}
       </div>
    );

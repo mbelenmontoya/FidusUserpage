@@ -19,15 +19,15 @@ img{
   height: auto;
 }
 
-html{
+html {
   font-family: 'Nunito';
   background-color: $f-primary-gray;
 }
 
-
-
-
-
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
 
 //components
 @import "./components/header.scss";

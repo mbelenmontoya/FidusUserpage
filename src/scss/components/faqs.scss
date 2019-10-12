@@ -2,10 +2,19 @@
   background-color: $f-primary-gray;
   padding-bottom: 20px;
   .faqs-container{
-    padding-left:150px;
+    padding-left: 150px;
     margin-bottom: 30px;
   }
-  .primary-paragraph{
+  .primary-paragraph {
     max-width: 50%;
+  }
+  @media only screen and (max-width: 480px) {
+    .faqs-container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .primary-paragraph {
+      max-width: 100%;
+    }
   }
 }

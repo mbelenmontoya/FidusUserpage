@@ -3,22 +3,22 @@
     background-color: $f-primary-blue;
     @include display-flex;
     @include property('justify-content', space-between);
+    flex-wrap: wrap;
     padding: 30px 70px;
     @include linear-gradient;
     align-items: center;
-    &::before{
-      height: 106px;
-    }
   }
   .header-nav-container{
     background-color: $f-primary-gray;
     border-bottom: 1px solid $f-cuarter-gray;
     @include display-flex;
     @include property('justify-content', space-between);
+    flex-wrap: wrap;
     padding: 0 70px;
   }
   .header-logo-container{
     max-width: 160px;
+    min-width: 80px;
   }
   .header-search-container{
     position: relative;
@@ -54,6 +54,8 @@
     @include reset-list;
     @include property('justify-content', space-between);
   }
+  .header-list-item {
+  }
   .header-link-item{
     text-decoration: none;
     font-weight: bold;
@@ -69,5 +71,31 @@
      text-decoration: none;
      display: block;
      font-size: 16px;
+  }
+  @media only screen and (max-width: 480px) {
+    .header-top {
+      flex-direction: column;
+      padding: 20px 0px;
+    }
+    .header-search-container {
+      margin-top: 20px;
+    }
+    .header-nav-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px;
+    }
+    .header-list-item {
+      text-align: center;
+    }
+    .header-link-item {
+      padding: 10px 0px;
+    }
+    .header-nav {
+      flex-direction: column;
+    }
+    .header-button {
+      padding: 10px 0px;
+    }
   }
 }

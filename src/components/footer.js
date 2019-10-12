@@ -23,7 +23,7 @@ const Footer = () => {
           </li>
           <li className="footer-item -max-width">
             <a href="https://www.facebook.com/fiduspremios" target="_blank" className="footer-link" rel="noopener noreferrer">
-              <img src={fbimage} alt="facebook logo"    className="footer-image" />
+              <img src={fbimage} alt="facebook logo" className="footer-image" />
             </a>
             <a href="https://www.instagram.com/fiduspremios/" className="footer-link" target="_blank" rel="noopener noreferrer">
               <img src={igimage} alt="instagram logo" className="footer-image" />
@@ -38,7 +38,7 @@ const Footer = () => {
         <figure className="footer-fiduscontainer">
           <Link to='/'><img src={fidusapp} alt="" className="footer-fidusimage" /></Link>
           <figcaption>
-            <span className="fidus-copyright">c Derechos de autor 2019 Fidus. Todos los derechos reservados.</span>
+            <span className="fidus-copyright">© Derechos de autor 2019 Fidus. Todos los derechos reservados.</span>
           </figcaption>
         </figure>
       </div>

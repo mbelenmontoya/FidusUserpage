@@ -1,4 +1,4 @@
-.footer{
+.footer {
   background-color: $f-primary-blue;
   @include display-flex;
   position: relative;
@@ -7,7 +7,7 @@
   @include property('justify-content', space-between);
   @include linear-gradient;
   box-sizing: border-box;
-  .footer-textcontainer{
+  .footer-textcontainer {
     @include display-flex;
     flex: 3;
   }
@@ -15,14 +15,16 @@
     max-width: 100px;
     margin-right: 100px;
   }
-  .footer-fidusapp{
+  .footer-fidusapp {
     flex: 1;
     position: relative;
+    margin-right: 30px;
   }
   .footer-fiduscontainer{
     position: absolute;
     max-width: 250px;
     bottom: -30px;
+    text-align: center;
   }
   .footer-listlinks{
     list-style: none;
@@ -46,9 +48,27 @@
     color: $f-white;
     font-size: 12px;
     white-space: nowrap;
-
   }
   .footer-image{
     max-width: 30px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 10px 10px;
+
+    .footer-textcontainer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-logocontainer {
+      margin-right: 0;
+    }
+    .footer-link {
+      padding: 8px 0px;
+    }
+    .footer-fidusapp {
+      display: none;
+    }
   }
 }

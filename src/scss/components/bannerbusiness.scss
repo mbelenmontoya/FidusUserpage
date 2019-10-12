@@ -12,7 +12,7 @@
     max-width: 450px;
   }
 
-  .banner-title{
+  .banner-title {
     color: $f-white;
     font-size: 40px;
     line-height: 45px;
@@ -25,5 +25,21 @@
     border-radius: 15px;
     text-decoration: none;
     color: $f-white;
+  }
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+
+    .banner-title {
+      font-size: 26px;
+      line-height: 30px;
+      text-align: right;
+    }
+
+    .banner-contentcontainer {
+      margin-bottom: 20px;
+    }
   }
 }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { baseUrl } from '../config'
+import { Link } from "react-router-dom"
 
 import noimage from '../images/assets/noimage.png'
-
 
 const BenefitTitle = props => {
   const {title} = props;
@@ -30,8 +30,8 @@ const Benefit = props => {
         }
       }}>
         <div className="benefit-imagecontainer"
-            style={{backgroundImage: `url(${image !== '' && image !== null ? image : noimage})`}}>
-          </div>
+          style={{backgroundImage: `url(${image !== '' && image !== null ? image : noimage})`}}>
+        </div>
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <div className="benefit-contentbox">
@@ -57,44 +57,59 @@ class BenefitBox extends Component {
   constructor(props){
     super(props);
     this.state = {
-      list: []
+      list: [],
+      loading: true,
     }
   }
 
  componentDidMount() {
    if (this.props.list) {
-     this.setState({ list: this.props.list })
+     this.setState({ list: this.props.list, loading: false })
      return;
    }
-   axios.get(`https://dashboard.fidus.com.ar/api/v1/landing/${this.props.url}`)
+   axios.get(`${baseUrl}/landing/${this.props.url}`)
    .then(res => {
      const list = res.data.rewards;
-     this.setState({ list });
+     this.setState({ list, loading: false });
    })
+ }
+
+ renderBenefits() {
+   const { list, loading } = this.state
+   if (loading) {
+     return
+   }
+   if (list.length === 0) {
+     return ( <p className="benefit-no-rewards">No se encontró ningún premio!</p> )
+   } else {
+     return (
+       list.map(reward =>
+         <Benefit
+         key={reward.id}
+         image={reward.picture}
+         logo={reward.place_logo}
+         discount={reward.description}
+         name={reward.place_name}
+         id={reward.id}
+         lat={reward.lat}
+         lng={reward.lng}
+         condition={reward.condition}
+         fburl={reward.place_facebook}
+         igurl={reward.place_instagram}
+         phone={reward.place_phone}
+         weburl={reward.place_webpage}
+         />
+       )
+     )
+   }
  }
 
  render(){
    return(
-     <div className="benefit">
-      <BenefitTitle title={this.props.title} />
+      <div className="benefit">
+        <BenefitTitle title={this.props.title} />
         <div className="benefit-containerboxes">
-        {this.state.list.map(reward =>
-          <Benefit
-          key={reward.id}
-          image={reward.picture}
-          logo={reward.place_logo}
-          discount={reward.description}
-          name={reward.place_name}
-          id={reward.id}
-          lat={reward.lat}
-          lng={reward.lng}
-          condition={reward.condition}
-          fburl={reward.place_facebook}
-          igurl={reward.place_instagram}
-          phone={reward.place_phone}
-          weburl={reward.place_webpage}
-          />
-        )}
+          {this.renderBenefits()}
         </div>
       </div>
    );

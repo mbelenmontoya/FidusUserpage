@@ -1,6 +1,8 @@
-.detail{
+.detail {
   padding-bottom: 90px;
   margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 
  .detail-box{
    max-width: 768px;
@@ -21,7 +23,7 @@
    position: relative;
    overflow: hidden;
  }
- 
+
  .detail-info{
    min-height: 200px;
    background-color: $f-white;
@@ -44,6 +46,7 @@
     width: 100px;
     border-radius: 15px;
     overflow: hidden;
+    margin-left: 20px;
     margin-right: 20px;
     box-sizing: border-box;
     display: flex;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 //images
 import bg1 from '../images/assets/bg1@2x.jpg'
@@ -11,64 +11,39 @@ const listImages = [
   {image: `${bg2}` ,
   frase: 'Encontrá tus beneficios con la App de Fidus' },
   {image: `${bg3}` ,
-  frase: 'todavia no la tengo'}
+  frase: 'Todavia no la tenés?'}
 ];
 
 const Carousel = () => {
+  var slideInterval = 4000;
 
-//carousel
-var slideInterval = 4000;
-function getFigures() {
-  return document.getElementById('carousel').getElementsByTagName('div');
-}
+  const [activeImage, setActiveImage] = useState(0);
 
-function moveForward() {
-  if (document.getElementById('carousel') === null) {
-    return;
-  }
-  var pointer = 0;
-  var figures = getFigures();
-  for (var i = 0; i < figures.length; i++) {
-    if (figures[i].className === 'carousel-slide visible') {
-      figures[i].className = 'carousel-slide hidden';
-      pointer = i;
+  const moveForward = () => {
+    if (document.getElementById('carousel') === null) {
+      return;
     }
-  }
-  if (++pointer === figures.length) {
-    pointer = 0;
-  }
-  figures[pointer].className = 'carousel-slide visible';
-  setTimeout(moveForward, slideInterval);
-}
+    setActiveImage((activeImage + 1) % listImages.length);
+  };
 
-function startPlayback() {
- setTimeout(moveForward, slideInterval);
-}
-
-startPlayback();
+  setTimeout(moveForward, slideInterval)
 
   return(
     <div className="carousel" id="carousel">
-      <ul className="carousel-list">
-      { listImages.map((item, i) => (
-        <li key={i} className="carousel-bullet"><span className="carousel-bullet-item"></span></li>
-      )) }
-      </ul>
-    {listImages.map(({image, frase}, i) => (
-      <div
-        className={i === 0 ? 'carousel-slide visible' : 'carousel-slide hidden'}
-        style={{backgroundImage:`url(${image})`}}
-        key={i}>
-        <h1 className="carousel-title">{frase}</h1>
-        <a href="https://play.google.com/store/apps/details?id=com.fidus.fidusapp" className="google-button"></a>
-        <a href="https://itunes.apple.com/us/app/fidus/id1459950785?l=es&ls=1&mt=8" className="apple-button"></a>
-      </div>
-    ))}
+      {listImages.map(({image, frase}, i) => (
+        <div
+          className={i === activeImage ? 'carousel-slide visible' : 'carousel-slide hidden'}
+          style={{backgroundImage:`url(${image})`}}
+          key={i}>
+          <h1 className="carousel-title">{frase}</h1>
+          <div className='carousel-buttons-container'>
+            <a href="https://play.google.com/store/apps/details?id=com.fidus.fidusapp" className="google-button"></a>
+            <a href="https://itunes.apple.com/us/app/fidus/id1459950785?l=es&ls=1&mt=8" className="apple-button"></a>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
-
-
-
 
 export default Carousel;

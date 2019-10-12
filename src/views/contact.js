@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const Form = () => {
   return (
@@ -15,7 +15,7 @@ const Form = () => {
 const Button = () => {
   return (
     <div className="contact-business">
-      <p className="contact-paragraph">Te invitamos a pasar por nuestras página de Negocios, <br />
+      <p className="contact-paragraph">Te invitamos a pasar por nuestra página de Negocios <br />
       y aprender más sobre cómo asociarte a nosotros.</p>
       <button className="contact-button" type="submit" name="submit">Ir a Negocios</button>
     </div>

@@ -1,15 +1,22 @@
-.section-title{
-    color: $f-darker-gray;
-    font-size: 26px;
-    margin-bottom: 50px;
-    padding: 30px 70px 10px 70px;
-    position: relative;
-    &::before{
-      content: '';
-      position: absolute;
-      height: 1px;
-      width: 25%;
-      background-color: $f-cuarter-gray;
-      bottom: 0;
-    }
+.section-title {
+  color: $f-darker-gray;
+  font-size: 26px;
+  margin-bottom: 50px;
+  padding: 30px 70px 10px 70px;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 25%;
+    background-color: $f-cuarter-gray;
+    bottom: 0;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-title {
+    padding: 30px 20px 0px 20px;
+    margin-bottom: 25px;
+  }
+}

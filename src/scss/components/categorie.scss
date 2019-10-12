@@ -45,4 +45,32 @@
   .categorie-rewards{
     z-index: 1;
   }
+
+  @media only screen and (max-width: 480px) {
+    .categorie-container {
+      justify-content: center;
+      padding: 0px 10px;
+    }
+    .categorie-box {
+      width: 140px;
+      min-width: 140px;
+      height: 280px;
+      min-height: 280px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      margin-right: 0px;
+      flex-wrap: wrap;
+      background-size: 100%;
+      background-position: left;
+      &:nth-child(even) {
+        margin-left: 20px;
+      }
+    }
+    .categorie-title {
+      font-size: 18px;
+    }
+    .categorie-rewards {
+      font-size: 14px;
+    }
+  }
 }

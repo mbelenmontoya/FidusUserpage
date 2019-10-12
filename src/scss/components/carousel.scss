@@ -4,7 +4,8 @@
   position: relative;
   height: 70vh;
   text-align: right;
-  >.carousel-slide{
+
+  >.carousel-slide {
     position: absolute;
     width: 100vw;
     height: 100%;
@@ -18,34 +19,27 @@
       opacity: 1;
     }
   }
-  .carousel-list{
-    @include display-flex;
-    @include reset-list;
-    position: absolute;
-    bottom: 30px;
-    right: 50px;
-    z-index: 1;
-  }
-  
-  .carousel-bullet{
-    padding: 5px;
-  }
-  .carousel-bullet-item{
-    width: 10px;
-    height: 10px;
-    display: block;
-    border: 1px solid $f-white;
-    border-radius: 50%;
-    &.active{
-      border: none;
-      background-color: $f-white;
-    }
-  }
-  .carousel-title{
+  .carousel-title {
     padding-right: 50px;
     margin-top: 50px;
     font-size: 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .carousel-buttons-container {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .carousel-title {
+      left: 20px;
+      padding-right: 10px;
+      font-size: 24px;
+    }
+    .carousel-buttons-container {
+      right: 10px;
+    }
   }
 }
