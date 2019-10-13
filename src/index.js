@@ -27,14 +27,14 @@ const Main = (
     <div className="main">
       <Header history={browserHistory}/>
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route exact path="/fidusclub" component={() => <BenefitView name='/fidusclub' url='featured_mobile_rewards' categorie='categories' title='Fidus Club' />} />
         <Route exact path="/fidusuniversitarios" component={() => <BenefitView name='/fidusuniversitarios' url='featured_mobile_rewards_universities' categorie='categories_universities' title='Fidus Universitarios' />} />
         <Route exact path="/faqs" component={Faqs} />
         <Route exact path="/contact" component={Contact} />
         <Route path="/detail/:id" component={Detail} / >
         <Route path="/search/:value" component={Search} / >
-        </Switch>
+        <Route component={Home} />
+      </Switch>
       <Footer />
     </div>
     </Router>
