@@ -1,19 +1,27 @@
 .banner-business{
-  background-color: $f-primary-blue;
+  background-color: $f-white;
+  color: $f-primary-blue;
   @include display-flex;
   position: relative;
   align-items: center;
   text-align: right;
   @include box-sizing;
   @include linear-gradient;
+  &::before{
+      background: linear-gradient(90deg, rgba($f-white,  0.02) 0%, rgba($f-primary-blue,  0.2) 100%);
+    }
   justify-content: space-around;
   padding: 30px 70px;
   .banner-imagecontainer,{
     max-width: 450px;
   }
 
+<<<<<<< Updated upstream
   .banner-title {
     color: $f-white;
+=======
+  .banner-title{
+>>>>>>> Stashed changes
     font-size: 40px;
     line-height: 45px;
     margin-bottom: 30px;

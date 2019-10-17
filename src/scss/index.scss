@@ -24,10 +24,13 @@ html {
   background-color: $f-primary-gray;
 }
 
+<<<<<<< Updated upstream
 html, body {
   max-width: 100% !important;
   overflow-x: hidden !important;
 }
+=======
+>>>>>>> Stashed changes
 
 //components
 @import "./components/header.scss";
@@ -41,3 +44,10 @@ html, body {
 @import './components/contact.scss';
 @import './components/detail.scss';
 @import './components/popup.scss';
+<<<<<<< Updated upstream
+=======
+@import "./components/loader.scss";
+
+
+
+>>>>>>> Stashed changes

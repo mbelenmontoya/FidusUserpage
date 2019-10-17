@@ -1,0 +1,11 @@
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 100px;
+  .icon-loader{
+    font-size: 100px;
+    color: $f-primary-blue;
+  }
+}

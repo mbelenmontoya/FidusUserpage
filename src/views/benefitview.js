@@ -1,14 +1,14 @@
 import React from 'react'
 
 import BenefitBox from '../components/benefitBox'
-import Categories from '../components/categories'
+import CategoriesBox from '../components/categoriesbox'
 
 const BenefitView = props =>{
-const {name, url, categorie, title} = props;
+const {name, url, categorie, title, categoriepath} = props;
   return(
     <div className="benefit-view">
       <BenefitBox name={name} url={url} title={title} />
-      <Categories url={categorie} />
+      <CategoriesBox url={categorie} path={categoriepath} />
     </div>
   );
 }

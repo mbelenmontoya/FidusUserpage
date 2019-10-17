@@ -6,6 +6,12 @@
     flex-wrap: wrap;
     padding: 30px 70px;
     @include linear-gradient;
+<<<<<<< Updated upstream
+=======
+    &::before{
+      height: 106px;
+  }
+>>>>>>> Stashed changes
     align-items: center;
   }
   .header-nav-container{

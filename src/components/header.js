@@ -7,7 +7,12 @@ import logo from '../images/logos/horizontal@2x.png'
 
 const menuListItems = [
     { name: 'Fidus Club', href: '/fidusclub' },
+<<<<<<< Updated upstream
     { name: 'Fidus Universitarios', href: '/fidusuniversitarios' },
+=======
+    { name: 'Fidus Empresas', href: '/fidusempresas' },
+    {/* name: 'Fidus Universitarios', href: '/fidusuniversitarios' */},
+>>>>>>> Stashed changes
 ];
 
 const HeaderTop = props => {
